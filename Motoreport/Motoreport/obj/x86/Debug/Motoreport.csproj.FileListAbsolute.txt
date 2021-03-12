@@ -1,0 +1,8 @@
+c:\users\dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\bin\Debug\Motoreport.exe
+c:\users\dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\bin\Debug\Motoreport.pdb
+c:\users\dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\obj\x86\Debug\Motoreport.Properties.Resources.resources
+c:\users\dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\obj\x86\Debug\Motoreport.csproj.GenerateResource.Cache
+c:\users\dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\obj\x86\Debug\Motoreport.exe
+c:\users\dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\obj\x86\Debug\Motoreport.pdb
+C:\Users\Dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\obj\x86\Debug\Motoreport.csprojResolveAssemblyReference.cache
+C:\Users\Dalmiro\documents\visual studio 2010\Projects\Motoreport\Motoreport\obj\x86\Debug\Motoreport.List_TRP.resources
