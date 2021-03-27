@@ -40,15 +40,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.searchType = new System.Windows.Forms.ComboBox();
             this.ListRst = new System.Windows.Forms.ListBox();
+            this.searchType = new System.Windows.Forms.ComboBox();
             this.Grp_TRP = new System.Windows.Forms.GroupBox();
-            this.Grp_TP = new System.Windows.Forms.GroupBox();
             this.ListTrP = new System.Windows.Forms.ListBox();
+            this.Grp_TP = new System.Windows.Forms.GroupBox();
+            this.ListTR = new System.Windows.Forms.ListBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.MenuOP.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Grp_TRP.SuspendLayout();
+            this.Grp_TP.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuOP
@@ -67,8 +69,8 @@
             // 
             this.nuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newInfo,
-            this.GenRpt,
-            this.NewTurn});
+            this.NewTurn,
+            this.GenRpt});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
@@ -78,6 +80,7 @@
             this.newInfo.Name = "newInfo";
             this.newInfo.Size = new System.Drawing.Size(159, 22);
             this.newInfo.Text = "Nuevo Informe";
+            this.newInfo.Click += new System.EventHandler(this.newInfo_Click);
             // 
             // GenRpt
             // 
@@ -103,13 +106,13 @@
             // editInf
             // 
             this.editInf.Name = "editInf";
-            this.editInf.Size = new System.Drawing.Size(152, 22);
+            this.editInf.Size = new System.Drawing.Size(149, 22);
             this.editInf.Text = "Editar Informe";
             // 
             // editTurn
             // 
             this.editTurn.Name = "editTurn";
-            this.editTurn.Size = new System.Drawing.Size(152, 22);
+            this.editTurn.Size = new System.Drawing.Size(149, 22);
             this.editTurn.Text = "Editar Turno";
             // 
             // exitMenu
@@ -151,18 +154,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resultados";
             // 
-            // searchType
-            // 
-            this.searchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchType.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchType.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.searchType.FormattingEnabled = true;
-            this.searchType.Location = new System.Drawing.Point(187, 50);
-            this.searchType.Name = "searchType";
-            this.searchType.Size = new System.Drawing.Size(140, 32);
-            this.searchType.TabIndex = 5;
-            this.searchType.ValueMember = "0";
-            // 
             // ListRst
             // 
             this.ListRst.FormattingEnabled = true;
@@ -171,6 +162,20 @@
             this.ListRst.Name = "ListRst";
             this.ListRst.Size = new System.Drawing.Size(733, 148);
             this.ListRst.TabIndex = 0;
+            // 
+            // searchType
+            // 
+            this.searchType.DisplayMember = "0";
+            this.searchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchType.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchType.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.searchType.FormattingEnabled = true;
+            this.searchType.Location = new System.Drawing.Point(187, 50);
+            this.searchType.Name = "searchType";
+            this.searchType.Size = new System.Drawing.Size(140, 32);
+            this.searchType.TabIndex = 5;
+            this.searchType.Text = "Buscar por...";
+            this.searchType.ValueMember = "0";
             // 
             // Grp_TRP
             // 
@@ -185,18 +190,6 @@
             this.Grp_TRP.TabStop = false;
             this.Grp_TRP.Text = "Trabajos pendientes";
             // 
-            // Grp_TP
-            // 
-            this.Grp_TP.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Grp_TP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Grp_TP.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grp_TP.Location = new System.Drawing.Point(400, 289);
-            this.Grp_TP.Name = "Grp_TP";
-            this.Grp_TP.Size = new System.Drawing.Size(372, 261);
-            this.Grp_TP.TabIndex = 7;
-            this.Grp_TP.TabStop = false;
-            this.Grp_TP.Text = "Turnos próximos";
-            // 
             // ListTrP
             // 
             this.ListTrP.Cursor = System.Windows.Forms.Cursors.Default;
@@ -206,6 +199,29 @@
             this.ListTrP.Name = "ListTrP";
             this.ListTrP.Size = new System.Drawing.Size(363, 196);
             this.ListTrP.TabIndex = 0;
+            // 
+            // Grp_TP
+            // 
+            this.Grp_TP.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Grp_TP.Controls.Add(this.ListTR);
+            this.Grp_TP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Grp_TP.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grp_TP.Location = new System.Drawing.Point(400, 289);
+            this.Grp_TP.Name = "Grp_TP";
+            this.Grp_TP.Size = new System.Drawing.Size(372, 261);
+            this.Grp_TP.TabIndex = 7;
+            this.Grp_TP.TabStop = false;
+            this.Grp_TP.Text = "Turnos próximos";
+            // 
+            // ListTR
+            // 
+            this.ListTR.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ListTR.FormattingEnabled = true;
+            this.ListTR.ItemHeight = 24;
+            this.ListTR.Location = new System.Drawing.Point(3, 28);
+            this.ListTR.Name = "ListTR";
+            this.ListTR.Size = new System.Drawing.Size(363, 220);
+            this.ListTR.TabIndex = 1;
             // 
             // progressBar1
             // 
@@ -228,6 +244,8 @@
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MenuOP);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "List_TRP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MotoReport";
@@ -235,6 +253,7 @@
             this.MenuOP.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.Grp_TRP.ResumeLayout(false);
+            this.Grp_TP.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,6 +279,7 @@
         private System.Windows.Forms.GroupBox Grp_TP;
         private System.Windows.Forms.ListBox ListTrP;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ListBox ListTR;
     }
 }
 
